@@ -10,11 +10,13 @@ const simulateNetworkLatency = async function(
   ms = 100,
   latency = LATENCY_FACTOR
 ) {
+  const latencyMS = ms * latency;
+
   return await new Promise(resolve => {
     let waitT = setTimeout(() => {
       clearTimeout(waitT);
       resolve();
-    }, ms * latency);
+    }, latencyMS);
   });
 };
 

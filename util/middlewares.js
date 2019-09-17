@@ -1,9 +1,11 @@
 const { simulateNetworkLatency } = require("./network-helper");
 
-const DEFAULT_LATENCY_MS = 300;
+const DEFAULT_MIDDLEWARE_LATENCY_MS = 300;
 
 const simulatedLatencyMiddleware = async function(req, res, next) {
-  await simulateNetworkLatency(DEFAULT_LATENCY_MS);
+  if (req.originalUrl.includes("newspaper")) {
+    await simulateNetworkLatency(DEFAULT_MIDDLEWARE_LATENCY_MS, 1);
+  }
   next();
 };
 
