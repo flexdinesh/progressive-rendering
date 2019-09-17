@@ -6,7 +6,7 @@ Progressive rendering is a technique where you can stream portions of a webpage 
 
 Start the server with `yarn start`
 
-### Static Rendering
+### Full Rendering
 
 Goto URL - http://localhost:3000/newspaper
 
