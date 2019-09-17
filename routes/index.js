@@ -9,7 +9,7 @@ router.get("/", function(req, res, next) {
 
 /* GET app.js */
 router.get("/boo/app.js", async function(req, res, next) {
-  await simulateNetworkLatency(300);
+  await simulateNetworkLatency(10);
   res.send("");
 });
 
